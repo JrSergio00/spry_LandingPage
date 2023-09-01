@@ -1,28 +1,36 @@
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
 }
-body{
+
+body {
     width: 100%;
-    /* background: url(../images/backgroun.png) no-repeat center top;
+    /* background: url(../images/background.png) no-repeat center top;
     background-size: contain; */
 }
-header{
-    background-color: #1C2232;
+
+main {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(35, 43, 65, 1) 92%, rgba(28, 34, 50, 1) 100%);
+    height: 100vh;
+}
+
+main nav {
     /* width: 65vw; */
     max-width: 100%;
+    height: 5vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 2em 20em;
     margin: 0 auto;
 }
-header a {
-    background-color: #B8C5E5;
+main nav a {
+    background-color: rgb(202, 188, 188, .2);
     border: 1px solid #fff;
     text-decoration: none;
-    padding: 1em 2em;
+    padding: .5em 1.5em;
     border-radius: .9em;
     color: #fff;
     background-image: -webkit-linear-gradient(45deg, #571111 50%, transparent 50%);
@@ -32,69 +40,137 @@ header a {
     -webkit-transition: background 100ms ease-in-out;
     transition: background 500ms ease-in-out;
     transition: 500ms;
+    font-size: .8em;
 }
-header a:hover {
+main nav a:hover {
     background-position: 0;
     transform: scale(1.05);
 }
+main nav img {
+    height: 1.2em;
+    cursor: pointer;
+}
 
-main{
-    width: 65vw;
+main section {
+    height: 70%;
+    max-width: 65%;
     margin: 0 auto;
     padding: 1em 2em;
     display: flex;
     align-items: end;
     justify-content: space-between;
 }
-main > img{
-    width: 15em;
-    height: 600px;
-    object-fit: cover;
-}
-main section{
-    height: 100%;
-    margin: auto 0;;
-}
-main section h2{
+
+main section h2 {
     color: #c5cee3;
     font-size: 4rem;
     font-weight: 300;
 }
-main section p{
+
+main section p {
     font-weight: 600;
     font-size: 1.3em;
 }
-main section span, main section p{
+
+main section span,
+main section p {
     color: #818080;
 }
-main section .links img{
+
+main section img {
     width: 180px;
 }
 
-body section:nth-child(3){
-    width: 80vw;
-    margin: 13em auto;
-    border-bottom: 2px solid #d7d7d7;
+main section img#smartphone {
+    width: 15em;
+    height: 30rem;
+    object-fit: cover;
+    transition: 500ms;
 }
-body section:nth-child(3) h2{
+main section img#smartphone:hover{
+    transform: scale(1.05);
+}
+
+main .wave {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    background-image: url(../images/onda.png);
+    background-size: 1000px 100px;
+    animation: waveAnimation 5s ease-in-out infinite alternate;
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+main #wave1 {
+    z-index: 1000;
+    opacity: 1;
+    background-position-x: 400px;
+}
+
+main #wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    background-position-x: 300px;
+}
+
+main #wave3 {
+    z-index: 998;
+    opacity: 0.2;
+    background-position-x: 200px;
+}
+
+main #wave4 {
+    z-index: 997;
+    opacity: 0.8;
+    background-position-x: 100px;
+}
+
+.about {
+    width: 80vw;
+    margin: 10em auto;
+    border-bottom: 2px solid #d7d7d7;
+    display: flex;
+    align-items: center;
+    padding: 5em 0;
+}
+.about .content h2 {
     color: #384F8C;
     border-left: 4px solid #384F8C;
     padding: .2em 1em;
     font-size: 2em;
 }
-body section:nth-child(3) span{
+.about .content span {
     color: #818080;
 }
-body section:nth-child(3) p{
+.about .content p {
     margin: 4em 0;
     color: #818080;
-    width: 30%;
+    width: 50%;
     font-weight: 600;
     font-size: 1.2em;
     text-align: justify;
 }
+.about img{
+    height: 25em;
+    border-radius: 1.5em;
+    box-shadow: 2px 5px 10px #00000089;
+    transition: 500ms;
+}
+.about img:hover{
+    transform: scale(1.05);
+}
 
-body section:nth-child(4){
+.cards {
     width: 80vw;
     margin: 0 auto;
     margin-bottom: 15em;
@@ -102,13 +178,17 @@ body section:nth-child(4){
     align-items: center;
     justify-content: space-between;
 }
-body section:nth-child(4) div.card{
+.cards div.card {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1em;
+    transition: 500ms;
 }
-body section:nth-child(4) div.card p{
+.cards div.card:hover{
+    transform: scale(1.1);
+}
+.cards div.card p{
     width: 90%;
     font-weight: 600;
     font-size: 1.3em;
@@ -116,31 +196,91 @@ body section:nth-child(4) div.card p{
     text-align: center;
 }
 
-body footer{
+footer {
     width: 100%;
-    padding: 3em 0;
-    background-color: #1C2232;
+    padding: 4em 0;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(35, 43, 65, 1) 92%, rgba(28, 34, 50, 1) 100%);
 }
-body footer section{
-    width: 80%;
+footer section {
+    max-width: 100%;
     margin: 0 auto;
 }
-body footer section h2{
+footer section h2 {
+    width: 80%;
     color: #384F8C;
     border-left: 4px solid #384F8C;
     padding: .2em 1em;
     font-size: 2em;
-    margin: .3em 0;
+    margin: 0 auto;
 }
-body footer section span{
+footer section span {
     color: #818080;
 }
-body footer section div.preview{
+
+footer section .preview{
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 5em 0;
+    margin: 4em auto;
+    gap: .5em;
 }
-body footer section div.preview img{
-    height: 35em;
+footer section .preview .container{
+    position: relative;
+    height: 667px;
+    width: 300px;
+}
+footer section .preview .container:hover .flip{
+    transform: rotateY(180deg);
+}
+footer section .preview .container .flip{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: .8s;
+}
+
+.front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    box-shadow: 0px 0px 10px rgba(35, 43, 65, .6);
+    backface-visibility: hidden;
+}
+
+.back{
+    background-color: #571111;
+    transform: rotateY(180deg);
+    max-width: 100%;
+}
+.back h5, .back p{
+    color: #fff;
+    width: 80%;
+    margin: 1em auto;
+}
+.back h5{
+    text-align: center;
+    font-size: 1.4em;
+}
+.back p{
+    text-align: justify;
+    text-indent: 1.5em;
+    font-size: 1em;
+}
+
+.first{
+    background-image: url(../images/initialPage.png);
+}
+.second{
+    background-image: url(../images/homePage.png);
+}
+.third{
+    background-image: url(../images/destino.png);
+}
+.fourth{
+    background-image: url(../images/history.png);
 }

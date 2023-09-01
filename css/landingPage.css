@@ -5,15 +5,17 @@
 }
 body{
     width: 100%;
-    background: url(../images/backgroun.png) no-repeat center top;
-    background-size: contain;
+    /* background: url(../images/backgroun.png) no-repeat center top;
+    background-size: contain; */
 }
 header{
-    width: 65vw;
+    background-color: #1C2232;
+    /* width: 65vw; */
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2em;
+    padding: 2em 20em;
     margin: 0 auto;
 }
 header a {
